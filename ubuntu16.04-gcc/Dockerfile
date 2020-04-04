@@ -15,6 +15,7 @@ RUN echo "">/etc/apt/sources.list && \
 	echo "deb-src http://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse">>/etc/apt/sources.list && \ 
 	apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install build-essential -y
+	apt-get install build-essential -y && \
+	apt-get install libcurl4-openssl-dev -y
 
 CMD ["/bin/sh"]
