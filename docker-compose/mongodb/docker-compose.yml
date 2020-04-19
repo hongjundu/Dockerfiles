@@ -1,0 +1,23 @@
+version: '3'
+services:
+  apigw:
+    image: "mongo:latest"
+    container_name: "mongo-test"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    ports:
+      - 27017:27017
+    volumes:
+      - /Users/duhj/data/mongo-data:/data/db
+    networks:
+      - mongo-network
+    restart: always
+networks:
+  mongo-network:
+    driver: bridge
+
+
+#
+# docker run -ti --network mongo-test_mongo-network  --rm mongo mongo --host mongo-test -u root -p example
+#
