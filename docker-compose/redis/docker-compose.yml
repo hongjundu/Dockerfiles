@@ -1,0 +1,19 @@
+version: '3'
+services:  
+  redis:
+    image: "redis"
+    container_name: "redis-test"
+    ports:
+      - 6379:6379
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ./data:/data
+    networks:
+      - db-network
+networks:
+  db-network:
+    driver: bridge
+
+#
+# docker exec -ti redis-test /bin/sh
+#

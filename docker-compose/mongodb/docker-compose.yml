@@ -11,10 +11,10 @@ services:
     volumes:
       - /Users/duhj/data/mongo-data:/data/db
     networks:
-      - mongo-network
+      - db-network
     restart: always
 networks:
-  mongo-network:
+  db-network:
     driver: bridge
 
 
